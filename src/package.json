@@ -81,27 +81,94 @@
                 "default": true,
                 "group": "homepage"
             },
+            "featured_page": {
+                "type": "text",
+                "default": "",
+                "group": "homepage"
+            },
             "featured_title": {
                 "type": "text",
                 "default": "Featured articles",
                 "group": "homepage"
             },
-            "feed_title": {
+
+            "feed1_title": {
                 "type": "text",
                 "default": "Latest",
                 "group": "homepage"
             },
-            "feed_layout": {
+            "feed1_layout": {
                 "type": "select",
                 "options": [
+                    "Expanded-thumbnail",
                     "Expanded",
-                    "Right thumbnail",
-                    "Text-only",
-                    "Minimal"
+                    "Tiles",
+                    "Minimal",
+                    "Mini-columns"
                 ],
                 "default": "Expanded",
                 "group": "homepage"
             },
+            "feed1_slugs": {
+                "type": "text",
+                "default": "",
+                "group": "homepage"
+            },
+            "feed1_page": {
+                "type": "text",
+                "default": "",
+                "group": "homepage"
+            },
+
+            "feed2_title": {
+                "type": "text",
+                "default": "Latest",
+                "group": "homepage"
+            },
+            "feed2_layout": {
+                "type": "select",
+                "options": [
+                    "Expanded-thumbnail",
+                    "Expanded",
+                    "Tiles",
+                    "Minimal",
+                    "Mini-columns"
+                ],
+                "default": "Expanded",
+                "group": "homepage"
+            },
+            "feed2_slugs": {
+                "type": "text",
+                "default": "",
+                "group": "homepage"
+            },
+            "feed2_page": {
+                "type": "text",
+                "default": "",
+                "group": "homepage"
+            },
+
+            "feed_title": {
+                "type": "text",
+                "default": "Latest",
+                "group": "post"
+            },
+            "feed_layout": {
+                "type": "select",
+                "options": [
+                    "Expanded-thumbanil",
+                    "Expanded",
+                    "Minimal"
+                ],
+                "default": "Expanded",
+                "group": "post"
+            },
+            "feed_thumbnail_right": {
+                "type": "boolean",
+                "default": false,
+                "group": "post"
+            },
+
             "show_author": {
                 "type": "boolean",
                 "default": true,
