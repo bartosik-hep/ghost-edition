@@ -1,0 +1,37 @@
+{{!< default}}
+
+<main class="site-main">
+
+    <header class="feed-header gh-canvas">
+        {{#if @custom.feed1_title}}
+            <div class="feed-header-wrapper">
+                <h2 class="feed-header-title">{{@custom.feed1_title}}</h2>
+            </div>
+        {{/if}}
+    </header>
+
+    <div class="post-feed{{#match @custom.feed1_layout "~^" "Expanded"}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed1_layout "Expanded"}} text-only{{/match}} gh-feed gh-canvas">
+        {{#foreach posts}}
+            {{> "loop" feed_layout=@custom.feed1_layout }}
+        {{/foreach}}
+    </div>
+
+    <header class="feed-header gh-canvas">
+        {{#if @custom.feed2_title}}
+            <div class="feed-header-wrapper">
+                <h2 class="feed-header-title">{{@custom.feed2_title}}</h2>
+            </div>
+        {{/if}}
+    </header>
+
+    <div class="post-feed{{#match @custom.feed2_layout "~^" "Expanded"}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed2_layout "Expanded"}} text-only{{/match}} gh-feed gh-canvas">
+        {{#foreach posts}}
+            {{> "loop" feed_layout=@custom.feed2_layout }}
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
+
+</main>
+
+{{#contentFor "body_class"}}{{#if @site.cover_image}} with-full-cover is-head-transparent{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}

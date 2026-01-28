@@ -9,8 +9,7 @@
         </div>
     </div>
 
-    {{#match @custom.feed_layout "!=" "Text-only"}}
-    {{#match @custom.feed_layout "!=" "Minimal"}}
+    {{#match feed_layout "Expanded-thumbnail"}}
         <div class="feed-image u-placeholder rectangle">
             {{#if feature_image}}
                 <img
@@ -23,7 +22,6 @@
                 >
             {{/if}}
         </div>
-    {{/match}}
     {{/match}}
 
     <div class="feed-wrapper">
