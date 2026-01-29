@@ -44,7 +44,11 @@
         "custom": {
             "navigation_layout": {
                 "type": "select",
-                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "options": [
+                    "Logo on the left",
+                    "Logo in the middle",
+                    "Stacked"
+                ],
                 "default": "Logo on the left"
             },
             "title_font": {
@@ -91,7 +95,6 @@
                 "default": "Featured articles",
                 "group": "homepage"
             },
-
             "feed1_title": {
                 "type": "text",
                 "default": "Latest",
@@ -109,7 +112,7 @@
                 "default": "Rows",
                 "group": "homepage"
             },
-            "feed1_slugs": {
+            "feed1_tags": {
                 "type": "text",
                 "default": "",
                 "group": "homepage"
@@ -119,7 +122,6 @@
                 "default": "",
                 "group": "homepage"
             },
-
             "feed2_title": {
                 "type": "text",
                 "default": "Latest",
@@ -137,7 +139,7 @@
                 "default": "Rows",
                 "group": "homepage"
             },
-            "feed2_slugs": {
+            "feed2_tags": {
                 "type": "text",
                 "default": "",
                 "group": "homepage"
@@ -147,7 +149,6 @@
                 "default": "",
                 "group": "homepage"
             },
-
             "feed_title": {
                 "type": "text",
                 "default": "Latest",
@@ -156,7 +157,7 @@
             "feed_layout": {
                 "type": "select",
                 "options": [
-                    "Rows-thumbanil",
+                    "Rows-thumbnail",
                     "Rows",
                     "Rows-mini"
                 ],
@@ -168,7 +169,6 @@
                 "default": false,
                 "group": "post"
             },
-
             "show_author": {
                 "type": "boolean",
                 "default": true,
@@ -192,7 +192,7 @@
         "beeper": "2.1.0",
         "cssnano": "7.1.2",
         "gscan": "5.2.2",
-        "gulp": "5.0.1",
+        "gulp": "^5.0.1",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",

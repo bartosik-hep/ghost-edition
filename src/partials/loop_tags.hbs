@@ -1,0 +1,33 @@
+{{#split @custom.feed2_tags as |tag_names|}}
+{{#foreach tag_names}}
+    {{#get "tags" slug=string limit="1"}}
+        {{#foreach tags}}
+        <section class="topic">
+            <header class="topic-header">
+                <h2 class="topic-name">
+                    <a href="{{url}}">{{name}}</a>
+                </h2>
+            </header>
+            {{#get "posts" order="published_at asc" filter="tag:{{slug}}" limit="4" as |featured|}}
+                <ul class="topic-article-feed">
+                    {{#foreach featured}}
+                    {{#match @number "<" 4}}
+                    <li class="topic-article">
+                        <h3 class="topic-article-title">
+                            <a class="topic-article-link" href="{{url}}">
+                                {{> "icons/chevron-right"}} {{title}}
+                            </a>
+                        </h3>
+                    </li>
+                    {{else}}
+                    <a class="topic-more" href="{{url}}">Show more →</a>
+                    {{/match}}
+                    {{/foreach}}
+                </ul>
+            {{/get}}
+            
+        </section>
+        {{/foreach}}
+    {{/get}}
+{{/foreach}}
+{{/split}}
