@@ -2,6 +2,15 @@
 
 <main class="site-main">
 
+    {{!-- FEED 1 --}}
+    {{#if @custom.feed1_post}}
+        {{#get "posts" slug=@custom.feed1_post as |post|}}
+            {{#post}}
+                {{> "content" width="wide"}}
+            {{/post}}
+        {{/get}}
+    {{/if}}
+
     <header class="feed-header gh-canvas">
         {{#if @custom.feed1_title}}
             <div class="feed-header-wrapper">
@@ -10,11 +19,23 @@
         {{/if}}
     </header>
 
-    <div class="post-feed{{#match @custom.feed1_layout "~^" "Expanded"}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed1_layout "Expanded"}} text-only{{/match}} gh-feed gh-canvas">
+    {{#match @custom.feed2_layout "~^" "Rows"}}
+    <div class="post-feed{{#match @custom.feed1_layout "~$" "Rows"}} {{else}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed1_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
         {{#foreach posts}}
             {{> "loop" feed_layout=@custom.feed1_layout }}
         {{/foreach}}
     </div>
+    {{/match}}
+
+    
+    {{!-- FEED 2 --}}
+    {{#if @custom.feed2_post}}
+        {{#get "posts" slug=@custom.feed2_post as |post|}}
+            {{#post}}
+                {{> "content" width="wide"}}
+            {{/post}}
+        {{/get}}
+    {{/if}}
 
     <header class="feed-header gh-canvas">
         {{#if @custom.feed2_title}}
@@ -24,11 +45,13 @@
         {{/if}}
     </header>
 
-    <div class="post-feed{{#match @custom.feed2_layout "~^" "Expanded"}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed2_layout "Expanded"}} text-only{{/match}} gh-feed gh-canvas">
-        {{#foreach posts}}
-            {{> "loop" feed_layout=@custom.feed2_layout }}
-        {{/foreach}}
-    </div>
+    {{#match @custom.feed2_layout "~^" "Rows"}}
+        <div class="post-feed{{#match @custom.feed2_layout "~$" "-mini"}} {{else}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed2_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
+            {{#foreach posts}}
+                {{> "loop" feed_layout=@custom.feed2_layout }}
+            {{/foreach}}
+        </div>
+    {{/match}}
 
     {{pagination}}
 

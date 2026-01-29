@@ -65,6 +65,13 @@
 
     {{#is "home"}}
         {{> "cover"}}
+        {{#if @custom.featured_post}}
+            {{#get "posts" slug=@custom.featured_post as |post|}}
+                {{#post}}
+                    {{> "content" width="wide"}}
+                {{/post}}
+            {{/get}}
+        {{/if}}
         {{#if @custom.show_featured_posts}}
             {{> "featured-posts"}}
         {{/if}}

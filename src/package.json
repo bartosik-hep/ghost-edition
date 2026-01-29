@@ -81,7 +81,7 @@
                 "default": true,
                 "group": "homepage"
             },
-            "featured_page": {
+            "featured_post": {
                 "type": "text",
                 "default": "",
                 "group": "homepage"
@@ -100,13 +100,13 @@
             "feed1_layout": {
                 "type": "select",
                 "options": [
-                    "Expanded-thumbnail",
-                    "Expanded",
+                    "Rows-thumbnail",
+                    "Rows",
                     "Tiles",
-                    "Minimal",
-                    "Mini-columns"
+                    "Rows-mini",
+                    "Tags"
                 ],
-                "default": "Expanded",
+                "default": "Rows",
                 "group": "homepage"
             },
             "feed1_slugs": {
@@ -114,7 +114,7 @@
                 "default": "",
                 "group": "homepage"
             },
-            "feed1_page": {
+            "feed1_post": {
                 "type": "text",
                 "default": "",
                 "group": "homepage"
@@ -128,13 +128,13 @@
             "feed2_layout": {
                 "type": "select",
                 "options": [
-                    "Expanded-thumbnail",
-                    "Expanded",
+                    "Rows-thumbnail",
+                    "Rows",
                     "Tiles",
-                    "Minimal",
-                    "Mini-columns"
+                    "Rows-mini",
+                    "Tags"
                 ],
-                "default": "Expanded",
+                "default": "Rows",
                 "group": "homepage"
             },
             "feed2_slugs": {
@@ -142,7 +142,7 @@
                 "default": "",
                 "group": "homepage"
             },
-            "feed2_page": {
+            "feed2_post": {
                 "type": "text",
                 "default": "",
                 "group": "homepage"
@@ -156,11 +156,11 @@
             "feed_layout": {
                 "type": "select",
                 "options": [
-                    "Expanded-thumbanil",
-                    "Expanded",
-                    "Minimal"
+                    "Rows-thumbanil",
+                    "Rows",
+                    "Rows-mini"
                 ],
-                "default": "Expanded",
+                "default": "Rows",
                 "group": "post"
             },
             "feed_thumbnail_right": {
