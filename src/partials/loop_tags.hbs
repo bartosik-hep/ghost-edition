@@ -1,4 +1,4 @@
-{{#split @custom.feed2_tags as |tag_names|}}
+{{#split feed_tags as |tag_names|}}
 {{#foreach tag_names}}
     {{#get "tags" slug=string limit="1"}}
         {{#foreach tags}}

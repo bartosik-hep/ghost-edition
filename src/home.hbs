@@ -31,7 +31,7 @@
 
     {{#match @custom.feed1_layout "Tags"}}
     <div class="gh-canvas"><div class="topic-feed">
-        {{> "loop_tags" tag_names=tag_names feed_tags=@custom.feed1_tags}}
+        {{> "loop_tags" feed_tags=@custom.feed1_tags}}
     </div></div>
     {{/match}}
 
@@ -55,7 +55,7 @@
 
     {{#match @custom.feed2_layout "~^" "Rows"}}
     <div class="post-feed{{#match @custom.feed2_layout "~$" "-mini"}} {{else}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed2_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
-        {{#get "posts" filter="tag:{{@custom.feed1_tags}}"}}
+        {{#get "posts" filter="tag:{{@custom.feed2_tags}}"}}
         {{#foreach posts}}
         {{> "loop" feed_layout=@custom.feed2_layout}}
         {{/foreach}}
@@ -65,7 +65,7 @@
 
     {{#match @custom.feed2_layout "Tags"}}
     <div class="gh-canvas"><div class="topic-feed">
-        {{> "loop_tags" tag_names=tag_names feed_tags=@custom.feed2_tags}}
+        {{> "loop_tags" feed_tags=@custom.feed2_tags}}
     </div></div>
     {{/match}}
 
