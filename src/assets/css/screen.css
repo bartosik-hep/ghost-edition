@@ -4,7 +4,7 @@
 @import "general/button.css";
 @import "general/form.css";
 @import "general/icons.css";
-@import "general/vars.css";
+@import "general/var.css";
 @import "site/layout.css";
 @import "site/header.css";
 @import "site/cover.css";
@@ -12,6 +12,8 @@
 @import "blog/feed.css";
 @import "blog/featured.css";
 @import "blog/pagination.css";
+@import "blog/post.css";
+@import "blog/post_featured.css";
 @import "blog/single.css";
 @import "blog/author.css";
 @import "blog/share.css";

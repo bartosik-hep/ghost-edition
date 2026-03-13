@@ -39,3 +39,23 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* From ruby/assets/css/misc/utils.css */
+.gh-tiles .u-placeholder.same-height {
+    height: 0;
+}
+
+.gh-tiles .u-placeholder.rectangle {
+    padding-bottom: 56.25%;
+}
+
+.u-shadow {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow-base);
+    transition: box-shadow 0.2s var(--animation-base);
+}
+
+.u-shadow:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+}

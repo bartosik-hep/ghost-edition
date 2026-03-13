@@ -48,3 +48,12 @@
 .author-list .author-image-placeholder span {
     background-color: var(--light-gray-color);
 }
+
+/* From ruby/assets/css/blog/author.css */
+.author-image-placeholder {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border-radius: 50%;
+}

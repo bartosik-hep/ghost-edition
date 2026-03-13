@@ -69,6 +69,12 @@
     </div></div>
     {{/match}}
 
+    {{#match @custom.feed2_layout "Tiles"}}
+    <div class="gh-outer"><div class="gh-inner"><div class="post-feed gh-feed gh-tiles">
+        {{> "loop_tiles" feed_tag=@custom.feed2_tags}}
+    </div></div></div>
+    {{/match}}
+
     {{!-- LATEST --}}
     {{#if @custom.feed_title}}
         <header class="feed-header gh-canvas">
