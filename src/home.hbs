@@ -3,6 +3,7 @@
 <main class="site-main">
 
     {{!-- FEED 1 --}}
+    <section class="gh-feed1">
     {{#if @custom.feed1_post}}
         {{#get "posts" slug=@custom.feed1_post as |post|}}
             {{#post}}
@@ -30,13 +31,17 @@
     {{/match}}
 
     {{#match @custom.feed1_layout "Tags"}}
-    <div class="gh-canvas"><div class="topic-feed">
+    <div class="gh-outer"><div class="gh-inner"><div class="topic-feed">
+    {{!-- <div class="gh-canvas"><div class="topic-feed"> --}}
         {{> "loop_tags" feed_tags=@custom.feed1_tags}}
-    </div></div>
+    </div></div></div>
     {{/match}}
+
+    </section>
 
     
     {{!-- FEED 2 --}}
+    <section class="gh-feed2">
     {{#if @custom.feed2_post}}
         {{#get "posts" slug=@custom.feed2_post as |post|}}
             {{#post}}
@@ -74,6 +79,7 @@
         {{> "loop_tiles" feed_tag=@custom.feed2_tags}}
     </div></div></div>
     {{/match}}
+    </section>
 
     {{!-- LATEST --}}
     {{#if @custom.feed_title}}
@@ -82,7 +88,9 @@
                 <h2 class="feed-header-title">{{@custom.feed_title}}</h2>
             </div>
         </header>
+    {{/if}}
 
+    <section class="gh-feedlast">
         <div class="post-feed{{#match @custom.feed_layout "~^" "Rows"}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
             {{#get "posts" filter="tag:-internal"}}
             {{#foreach posts}}
@@ -93,7 +101,7 @@
 
 
         {{pagination}}
-    {{/if}}
+    </section>
 
 </main>
 
