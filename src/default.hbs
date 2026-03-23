@@ -68,7 +68,7 @@
         {{#if @custom.featured_post}}
             {{#get "posts" slug=@custom.featured_post as |post|}}
                 {{#post}}
-                    {{> "content" width="wide"}}
+                    {{> "content" width="wide" article_class="post-home"}}
                 {{/post}}
             {{/get}}
         {{/if}}
