@@ -1,6 +1,6 @@
 .topic-feed {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 80px 60px;
 }
 
@@ -68,5 +68,11 @@
 @media (max-width: 767px) {
     .topic-feed {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .topic-feed {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
