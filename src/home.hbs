@@ -1,85 +1,85 @@
 {{!< default}}
 
+{{!-- FEED 1 --}}
+<section class="gh-feed1">
+{{#if @custom.feed1_post}}
+    {{#get "posts" slug=@custom.feed1_post as |post|}}
+        {{#post}}
+            {{> "content" width="wide"}}
+        {{/post}}
+    {{/get}}
+{{/if}}
+
+<header class="feed-header gh-canvas">
+    {{#if @custom.feed1_title}}
+        <div class="feed-header-wrapper">
+            <h2 class="feed-header-title">{{@custom.feed1_title}}</h2>
+        </div>
+    {{/if}}
+</header>
+
+{{#match @custom.feed1_layout "~^" "Rows"}}
+<div class="post-feed{{#match @custom.feed1_layout "~$" "Rows"}} {{else}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed1_layout "Rows"}} text-only{{/match}} gh-related gh-canvas">
+    {{#get "posts" filter="tag:{{@custom.feed1_tags}}"}}
+    {{#foreach posts}}
+    {{> "loop" feed_layout=@custom.feed1_layout}}
+    {{/foreach}}
+    {{/get}}
+</div>
+{{/match}}
+
+{{#match @custom.feed1_layout "Tags"}}
+<div class="gh-outer"><div class="gh-inner"><div class="topic-feed">
+{{!-- <div class="gh-canvas"><div class="topic-feed"> --}}
+    {{> "loop_tags" feed_tags=@custom.feed1_tags}}
+</div></div></div>
+{{/match}}
+
+</section>
+
+
+{{!-- FEED 2 --}}
+<section class="gh-feed2">
+{{#if @custom.feed2_post}}
+    {{#get "posts" slug=@custom.feed2_post as |post|}}
+        {{#post}}
+            {{> "content" width="wide"}}
+        {{/post}}
+    {{/get}}
+{{/if}}
+
+<header class="feed-header gh-canvas">
+    {{#if @custom.feed2_title}}
+        <div class="feed-header-wrapper">
+            <h2 class="feed-header-title">{{@custom.feed2_title}}</h2>
+        </div>
+    {{/if}}
+</header>
+
+{{#match @custom.feed2_layout "~" "Rows"}}
+<div class="post-feed{{#match @custom.feed2_layout "~$" "-mini"}} {{else}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed2_layout "Rows"}} text-only{{/match}} gh-related gh-canvas">
+    {{#get "posts" filter="tag:{{@custom.feed2_tags}}"}}
+    {{#foreach posts}}
+    {{> "loop" feed_layout=@custom.feed2_layout}}
+    {{/foreach}}
+    {{/get}}
+</div>
+{{/match}}
+
+{{#match @custom.feed2_layout "Tags"}}
+<div class="gh-canvas"><div class="topic-feed">
+    {{> "loop_tags" feed_tags=@custom.feed2_tags}}
+</div></div>
+{{/match}}
+
+{{#match @custom.feed2_layout "Tiles"}}
+<div class="gh-outer"><div class="gh-inner"><div class="post-feed gh-tiles gh-related">
+    {{> "loop_tiles" feed_tag=@custom.feed2_tags}}
+</div></div></div>
+{{/match}}
+</section>
+
 <main class="site-main">
-
-    {{!-- FEED 1 --}}
-    <section class="gh-feed1">
-    {{#if @custom.feed1_post}}
-        {{#get "posts" slug=@custom.feed1_post as |post|}}
-            {{#post}}
-                {{> "content" width="wide"}}
-            {{/post}}
-        {{/get}}
-    {{/if}}
-
-    <header class="feed-header gh-canvas">
-        {{#if @custom.feed1_title}}
-            <div class="feed-header-wrapper">
-                <h2 class="feed-header-title">{{@custom.feed1_title}}</h2>
-            </div>
-        {{/if}}
-    </header>
-
-    {{#match @custom.feed1_layout "~^" "Rows"}}
-    <div class="post-feed{{#match @custom.feed1_layout "~$" "Rows"}} {{else}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed1_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
-        {{#get "posts" filter="tag:{{@custom.feed1_tags}}"}}
-        {{#foreach posts}}
-        {{> "loop" feed_layout=@custom.feed1_layout}}
-        {{/foreach}}
-        {{/get}}
-    </div>
-    {{/match}}
-
-    {{#match @custom.feed1_layout "Tags"}}
-    <div class="gh-outer"><div class="gh-inner"><div class="topic-feed">
-    {{!-- <div class="gh-canvas"><div class="topic-feed"> --}}
-        {{> "loop_tags" feed_tags=@custom.feed1_tags}}
-    </div></div></div>
-    {{/match}}
-
-    </section>
-
-    
-    {{!-- FEED 2 --}}
-    <section class="gh-feed2">
-    {{#if @custom.feed2_post}}
-        {{#get "posts" slug=@custom.feed2_post as |post|}}
-            {{#post}}
-                {{> "content" width="wide"}}
-            {{/post}}
-        {{/get}}
-    {{/if}}
-
-    <header class="feed-header gh-canvas">
-        {{#if @custom.feed2_title}}
-            <div class="feed-header-wrapper">
-                <h2 class="feed-header-title">{{@custom.feed2_title}}</h2>
-            </div>
-        {{/if}}
-    </header>
-
-    {{#match @custom.feed2_layout "~" "Rows"}}
-    <div class="post-feed{{#match @custom.feed2_layout "~$" "-mini"}} {{else}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed2_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
-        {{#get "posts" filter="tag:{{@custom.feed2_tags}}"}}
-        {{#foreach posts}}
-        {{> "loop" feed_layout=@custom.feed2_layout}}
-        {{/foreach}}
-        {{/get}}
-    </div>
-    {{/match}}
-
-    {{#match @custom.feed2_layout "Tags"}}
-    <div class="gh-canvas"><div class="topic-feed">
-        {{> "loop_tags" feed_tags=@custom.feed2_tags}}
-    </div></div>
-    {{/match}}
-
-    {{#match @custom.feed2_layout "Tiles"}}
-    <div class="gh-outer"><div class="gh-inner"><div class="post-feed gh-feed gh-tiles">
-        {{> "loop_tiles" feed_tag=@custom.feed2_tags}}
-    </div></div></div>
-    {{/match}}
-    </section>
 
     {{!-- LATEST --}}
     {{#if @custom.feed_title}}
@@ -92,11 +92,9 @@
 
     <section class="gh-feedlast">
         <div class="post-feed{{#match @custom.feed_layout "~^" "Rows"}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
-            {{#get "posts" filter="tag:-internal+tag:-hidden"}}
             {{#foreach posts}}
                 {{> "loop" feed_layout=@custom.feed_layout}}
             {{/foreach}}
-            {{/get}}
         </div>
 
 

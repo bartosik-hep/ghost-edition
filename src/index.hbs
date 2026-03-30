@@ -12,7 +12,7 @@
 
     <div class="post-feed{{#match @custom.feed_layout "~^" "Rows"}} expanded{{/match}}{{#if @custom.feed_thumbnail_right}} right-thumbnail{{/if}}{{#match @custom.feed_layout "Rows"}} text-only{{/match}} gh-feed gh-canvas">
         {{#foreach posts}}
-            {{> "loop"}}
+            {{> "loop" feed_layout=@custom.feed_layout}}
         {{/foreach}}
     </div>
 
